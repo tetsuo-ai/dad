@@ -1,0 +1,34 @@
+# Local Grok/Codex state and credentials
+auth.json*
+agent_id
+config.toml
+config.toml.*
+disabled-hooks
+sessions/
+memory/
+upload_queue/
+marketplace-cache/
+logs/
+downloads/
+worktrees/
+worktrees.db
+
+# DAD runtime state
+dad/events/
+dad/evidence/
+dad/history/
+dad/locks/
+dad/logs/
+dad/windows/*/
+!dad/windows/DAD-Template/
+!dad/windows/DAD-Template/current.dad.json
+
+# Generated files
+__pycache__/
+*.py[cod]
+*.log
+*.tmp
+
+# Local tmux/socket artifacts
+*.sock
+dad-*.pid

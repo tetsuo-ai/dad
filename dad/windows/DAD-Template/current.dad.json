@@ -1,0 +1,53 @@
+{
+  "_comment": "Canonical reference template only. Live DAD state is stored on the tmux window as @dad_* options; do not treat this file as authoritative live state.",
+  "schema": "dad-window-template-v2",
+  "policy_version": "failclosed-lease-evidence-v1",
+  "id": "dad-<created-date>-<short-slug>",
+  "dad_window": "DAD-ExampleName",
+  "window_id": "@NN",
+  "dad_pane_id": "%NN",
+  "son_pane_id": "%NN",
+  "tmux_socket": "<socket-path-or-default>",
+  "session_id": "<grok-session-id-if-known>",
+  "objective": "The full high-level objective the user gave to /dad.",
+  "status": "reference-template",
+  "status_reason": "This template documents expected metadata shape. Active state lives in tmux @dad_* options.",
+  "scheduler_policy": {
+    "fast_loop_minutes": 2,
+    "deep_loop_minutes": 12,
+    "strategic_loop_minutes": 30,
+    "trampoline_version": "failclosed-lease-evidence-v1"
+  },
+  "daemon_fields": {
+    "watchdog_pid": "@dad_watchdog_pid",
+    "son_watcher_pid": "@dad_son_watcher_pid",
+    "idle_controller_pid": "@dad_idle_controller_pid"
+  },
+  "evidence_policy": {
+    "require_real_run": true,
+    "require_assertions": true,
+    "require_action_effect": true,
+    "min_transcript_bytes": 200
+  },
+  "state_machine": [
+    "booting",
+    "working",
+    "recovering",
+    "waiting",
+    "verifying",
+    "done",
+    "paused",
+    "stopped",
+    "broken"
+  ],
+  "progress_log": [
+    {
+      "timestamp": "<created-at-iso>",
+      "type": "reference",
+      "summary": "Template initialized",
+      "details": "A real DAD should store live state in tmux @dad_* options, run watchdog/son-watcher/idle-controller daemons, and keep 2m/12m/30m scheduler loops alive until /dad stop."
+    }
+  ],
+  "created_at": "<created-at-iso>",
+  "last_updated": "<updated-at-iso>"
+}

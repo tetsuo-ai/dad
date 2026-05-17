@@ -1,0 +1,9 @@
+{
+  "name": "dad",
+  "version": "0.1.0",
+  "description": "Autonomous native-tmux supervisor for Grok: launches a Dad/Son pane pair, keeps recurring supervision loops alive, records trajectory evidence, and gates checkpoint acceptance on real verification.",
+  "author": {
+    "name": "tetsuo-ai"
+  },
+  "homepage": "https://github.com/tetsuo-ai/dad"
+}
